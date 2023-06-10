@@ -8,14 +8,9 @@ public class PointCollection : MonoBehaviour
 
     [SerializeField]
     private Player _player;
-
-    [SerializeField]
-    private bool BoxCollider2D = true;
-
     void Start()
     {
         _player = GameObject.Find("Player").GetComponent<Player>();
-        // _player = GameObject.Find("BoxCollider2D").GetComponent<Player>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -38,11 +33,6 @@ public class PointCollection : MonoBehaviour
                 
             }
         }  
-
-        if (other.gameObject.CompareTag("Invisibale"))
-        {  
-            BoxCollider2D = false;   
-        }
 
     }
     

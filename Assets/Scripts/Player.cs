@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int _score;
 
-    private UIManager _uiManager;
 
+    private UIManager _uiManager;
 
 
     // Start is called before the first frame update
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         float horizonatlInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         
-        transform.Translate(Vector3.right *horizonatlInput * _speed * Time.deltaTime);
+        transform.Translate(Vector3.right * horizonatlInput * _speed * Time.deltaTime);
         transform.Translate(Vector3.up * verticalInput * _speed * Time.deltaTime);
         
     }
@@ -49,7 +49,4 @@ public class Player : MonoBehaviour
         _score += points;
         _uiManager.UpdateScore(_score);
     }
-
-
-
 }

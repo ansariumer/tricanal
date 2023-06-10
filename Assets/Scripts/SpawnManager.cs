@@ -12,8 +12,6 @@ public class SpawnManager : MonoBehaviour
     private GameObject _bigPrefabs;
     [SerializeField]
     private GameObject _doublePrefab;
-    [SerializeField]
-    private GameObject _invisibalePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +20,6 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SpawnEnemyRoutine());
         StartCoroutine(SpawnBigBoRoutine());
         StartCoroutine(SpawnDoubleRoutine());
-        StartCoroutine(SpawnInvisibaleRoutine());
     }
 
     // Update is called once per frame
@@ -89,17 +86,6 @@ public class SpawnManager : MonoBehaviour
     // Spawn _InvisibalePrefab at every 5 seconds
     // creat a corountine to type IEnumerator -- yield event
     // while loop 
-
-    IEnumerator SpawnInvisibaleRoutine()
-    {
-        while (true)
-        {
-            Vector3 posToSpawn =new Vector3(Random.Range(60f, 250f), Random.Range(-4f, 10f), 0);
-            Instantiate(_invisibalePrefab, posToSpawn, Quaternion.identity);
-            yield return new WaitForSeconds(2.0f);
-        }
-    }
-
 
 
 }
